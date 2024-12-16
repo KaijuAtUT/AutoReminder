@@ -13,7 +13,7 @@ function sendInterviewReminder() {
     // 面接時間の30分前か確認
     const reminderTime = new Date(interviewTime.getTime() - 30 * 60 * 1000); // 30分前
     if (now >= reminderTime && now < interviewTime) {
-      const message = `<!here> <@${interviewerA}> さん、 <@${interviewerB}> さん\n30分後に「${candidate}」さんの面接が開始されます！`;
+      const message = `<!here> <@${interviewerA}> さん、 <@${interviewerB}> さん\n30分後に${candidate}さんの面接が開始されます！`;
       sendToSlack(slackWebhookUrl, message);
     }
   }
